@@ -128,10 +128,30 @@ function str_limit_chars(string $string, int $limit, string $pointer = "..."): s
  * ###############
  */
 
+
+
+/**
+ * @param string|null $uri
+ * @return string
+ */
+function url(string $uri = null): string
+{
+    if ($uri) {
+        return ROOT . "/{$uri}";
+    }
+
+    return ROOT;
+}
+
+
+
 /**
  * @param string $path
  * @return string
  */
+
+
+
 function url(string $path = null): string
 {
     if (strpos($_SERVER['HTTP_HOST'], "localhost")) {
